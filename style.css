@@ -13,6 +13,11 @@
 
 html { scroll-behavior: smooth; }
 
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
 /* Cursor only on fine-pointer devices */
 @media (pointer: fine) {
   body {
@@ -504,12 +509,13 @@ section { padding: 6rem 3rem; }
 #projects { background: var(--surface); }
 .project-placeholder-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1.5rem;
   max-width: 1100px;
   margin-top: 2rem;
 }
 .project-card {
+  min-width: 0;
   background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -540,6 +546,7 @@ section { padding: 6rem 3rem; }
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700; font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  overflow-wrap: anywhere;
 }
 .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
 .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -633,6 +640,17 @@ footer {
   .education-card { padding: 1.5rem;}
   .education-header { flex-direction: column;}
   .education-badge { white-space: normal;}
+}
+
+@media (max-width: 360px) {
+  nav { padding: 1rem; }
+  section { padding: 3.5rem 1rem; }
+  .project-placeholder-grid { gap: 1rem; }
+  .project-body { padding: 1.25rem; }
+  .contact-item { gap: 0.75rem; padding: 1rem; }
+  .contact-item-info { min-width: 0; }
+  .contact-item-value { overflow-wrap: anywhere; }
+  .contact-arrow { flex-shrink: 0; }
 }
 
 /* Reduced motion for accessibility */
