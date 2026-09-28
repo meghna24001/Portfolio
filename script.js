@@ -46,35 +46,6 @@ if (prefersFinePointer && !reducedMotion && cursor && ring) {
   if (ring) ring.style.display = "none";
 }
 
-/* Animate skill-progress bars when the Skills section becomes visible */
-const skillSection = document.getElementById("skills");
-const skillFills = document.querySelectorAll(".skill-level-fill");
-
-if (skillSection && skillFills.length > 0) {
-  const widths = Array.from(skillFills).map((fill) => fill.style.width);
-
-  skillFills.forEach((fill) => {
-    fill.style.width = "0";
-  });
-
-  const skillObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          skillFills.forEach((fill, index) => {
-            fill.style.width = widths[index];
-          });
-
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.25 }
-  );
-
-  skillObserver.observe(skillSection);
-}
-
 /* Reveal non-hero sections as they enter the screen */
 const sections = document.querySelectorAll("section:not(#hero)");
 

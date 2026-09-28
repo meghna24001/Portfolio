@@ -456,7 +456,7 @@ section { padding: 6rem 3rem; }
 #skills { background: var(--bg); }
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1.5rem;
   max-width: 1100px;
 }
@@ -477,20 +477,49 @@ section { padding: 6rem 3rem; }
   transition: opacity 0.3s;
 }
 .skill-card:hover::before { opacity: 1; }
-.skill-icon { font-size: 2rem; margin-bottom: 1rem; }
 .skill-name {
   font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;
+  font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;
 }
-.skill-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
-.skill-level {
-  margin-top: 1.2rem;
-  height: 3px; background: var(--border); border-radius: 2px;
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  list-style: none;
 }
-.skill-level-fill {
-  height: 100%; border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transition: width 1s ease;
+.skill-tags li {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.65rem;
+}
+.skill-example {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+}
+.skill-example-label {
+  color: var(--accent);
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+.skill-example a {
+  color: var(--accent);
+  display: inline-block;
+  margin-top: 0.65rem;
+  text-decoration: none;
+}
+.skill-example a:hover {
+  text-decoration: underline;
 }
 
 /* Scroll reveal animation */
