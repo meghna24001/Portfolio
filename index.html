@@ -281,22 +281,60 @@
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-thumb">📊</div>
-          <div class="project-body">
-            <span class="project-tag">Python · Flask · SQL</span>
-            <div class="project-name">Finance Dashboard</div>
-            <div class="project-desc">
-              A deployed personal finance tracker for managing income, expenses,
-              budgets, accounts, and transaction history. Built with Flask and
-              SQLAlchemy, with authentication, dashboard charts, and bank statement imports.
-            </div>
-            <div class="project-links">
-              <a href="https://meghnaghosh.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="project-link">↗ Live Demo</a>
-              <a href="https://github.com/meghna24001/Finance-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link">📁 GitHub</a>
+        <article class="project-card project-case-study">
+          <figure class="case-study-figure">
+            <img
+              class="case-study-image"
+              src="screenshot.jpeg"
+              alt="FinSight dashboard with its navigation, September financial overview, and budget section shown with fictional demo data"
+              loading="lazy"
+            />
+            <figcaption>FinSight dashboard · fictional demo data</figcaption>
+          </figure>
+          <div class="project-body project-case-study-body">
+            <span class="project-tag">Python · Flask · SQLAlchemy · SQL</span>
+            <h3 class="project-name">Finance Dashboard</h3>
+            <p class="project-desc">
+              A personal finance app that brings monthly cash flow, budgets, and
+              transactions together in one place.
+            </p>
+            <details class="case-study-more">
+              <summary>Know more about this project</summary>
+              <div class="case-study-details">
+                <section class="case-study-block">
+                  <h4>The problem</h4>
+                  <p>
+                    Income, spending, budgets, and account activity can be difficult
+                    to follow across separate records. This dashboard gives users
+                    one place to review their finances and manage transactions.
+                  </p>
+                </section>
+                <section class="case-study-block">
+                  <h4>What I built</h4>
+                  <ul class="case-study-features">
+                    <li>Monthly income, spending, savings-rate, and net-worth overview</li>
+                    <li>Budget tracking and category spending charts</li>
+                    <li>Account management, transaction history, and income/expense entry</li>
+                    <li>Bank statement imports</li>
+                  </ul>
+                </section>
+                <section class="case-study-block case-study-block-wide">
+                  <h4>A technical challenge</h4>
+                  <p>
+                    Bank statement exports use different column names and transaction
+                    conventions. I built format-independent parsing with header aliases
+                    and explicit errors, so supported PDF and spreadsheet exports can
+                    be normalized into consistent transaction records.
+                  </p>
+                </section>
+              </div>
+            </details>
+            <div class="project-links case-study-links">
+              <a href="https://meghnaghosh.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="project-link">↗ Open live app</a>
+              <a href="https://github.com/meghna24001/Finance-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link">📁 View source code</a>
             </div>
           </div>
-        </div>
+        </article>
 
         <div class="project-card">
           <div class="project-thumb">🚧</div>
