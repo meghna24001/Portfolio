@@ -264,92 +264,101 @@
     <section id="projects">
       <div class="section-label">Projects</div>
       <h2 class="section-title">What I've Built</h2>
-      <div class="project-placeholder-grid">
-        <div class="project-card">
-          <div class="project-thumb">💼</div>
-          <div class="project-body">
-            <span class="project-tag">HTML + CSS + JS</span>
-            <div class="project-name">Personal Portfolio</div>
-            <div class="project-desc">
-              A responsive personal portfolio website to showcase my journey as a developer.
-              Built from scratch with clean HTML, CSS, and a touch of JavaScript.
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/meghna24001/Portfolio" target="_blank" rel="noopener noreferrer" class="project-link">📁 GitHub</a>
-              <!-- Add your live URL here when deployed, e.g. Vercel/Netlify -->
-            </div>
-          </div>
-        </div>
-
-        <article class="project-card project-case-study">
-          <figure class="case-study-figure">
+      <div class="project-grid">
+        <article class="project-card">
+          <figure class="project-preview">
             <img
-              class="case-study-image"
-              src="screenshot.jpeg"
-              alt="FinSight dashboard with its navigation, September financial overview, and budget section shown with fictional demo data"
+              src="social-preview.png"
+              alt="Portfolio preview graphic with Meghna Ghosh's name and web technologies"
               loading="lazy"
             />
-            <figcaption>FinSight dashboard · fictional demo data</figcaption>
+            <span class="project-preview-label">Personal website</span>
           </figure>
-          <div class="project-body project-case-study-body">
-            <span class="project-tag">Python · Flask · SQLAlchemy · SQL</span>
-            <h3 class="project-name">Finance Dashboard</h3>
+          <div class="project-body">
+            <span class="project-tag">HTML · CSS · JavaScript</span>
+            <h3 class="project-name">Personal Portfolio</h3>
             <p class="project-desc">
-              A personal finance app that brings monthly cash flow, budgets, and
-              transactions together in one place.
+              A responsive portfolio sharing my projects, skills, education, and
+              journey as a developer.
             </p>
-            <details class="case-study-more">
-              <summary>Know more about this project</summary>
-              <div class="case-study-details">
-                <section class="case-study-block">
-                  <h4>The problem</h4>
-                  <p>
-                    Income, spending, budgets, and account activity can be difficult
-                    to follow across separate records. This dashboard gives users
-                    one place to review their finances and manage transactions.
-                  </p>
-                </section>
-                <section class="case-study-block">
-                  <h4>What I built</h4>
-                  <ul class="case-study-features">
-                    <li>Monthly income, spending, savings-rate, and net-worth overview</li>
-                    <li>Budget tracking and category spending charts</li>
-                    <li>Account management, transaction history, and income/expense entry</li>
-                    <li>Bank statement imports</li>
-                  </ul>
-                </section>
-                <section class="case-study-block case-study-block-wide">
-                  <h4>A technical challenge</h4>
-                  <p>
-                    Bank statement exports use different column names and transaction
-                    conventions. I built format-independent parsing with header aliases
-                    and explicit errors, so supported PDF and spreadsheet exports can
-                    be normalized into consistent transaction records.
-                  </p>
-                </section>
-              </div>
-            </details>
-            <div class="project-links case-study-links">
-              <a href="https://meghnaghosh.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="project-link">↗ Open live app</a>
-              <a href="https://github.com/meghna24001/Finance-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link">📁 View source code</a>
+            <div class="project-links">
+              <a href="https://meghna24001.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" class="project-link">↗ View live site</a>
+              <a href="https://github.com/meghna24001/Portfolio" target="_blank" rel="noopener noreferrer" class="project-link">View source code</a>
             </div>
           </div>
         </article>
 
-        <div class="project-card">
-          <div class="project-thumb">🚧</div>
+        <article class="project-card">
+          <figure class="project-preview">
+            <img
+              src="screenshot.jpeg"
+              alt="FinSight dashboard with its navigation, September financial overview, and budget section shown with fictional demo data"
+              loading="lazy"
+            />
+            <span class="project-preview-label">FinSight · Demo data</span>
+          </figure>
           <div class="project-body">
-            <span class="project-tag">In Development</span>
-            <div class="project-name">Upcoming Projects</div>
-            <div class="project-desc">
-              Working on more substantial web and backend projects using
-              JavaScript, Python, and C++. Check back soon for updates.
-            </div>
-            <div class="project-links">
-              <span class="project-link">— In Progress</span>
+            <span class="project-tag">Python · Flask · SQLAlchemy</span>
+            <h3 class="project-name">Finance Dashboard</h3>
+            <p class="project-desc">
+              A personal finance app for tracking cash flow, budgets, accounts,
+              and transactions in one place.
+            </p>
+            <div class="project-actions">
+              <button class="project-more-button" type="button" aria-haspopup="dialog" aria-controls="finance-case-study">
+                Know more <span aria-hidden="true">→</span>
+              </button>
+              <div class="project-links">
+                <a href="https://meghnaghosh.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="project-link">↗ Live demo</a>
+                <a href="https://github.com/meghna24001/Finance-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link">Source code</a>
+              </div>
             </div>
           </div>
-        </div>
+          <dialog class="case-study-dialog" id="finance-case-study" aria-labelledby="finance-case-study-title">
+            <div class="case-study-dialog-header">
+              <div>
+                <span class="project-tag">Project case study</span>
+                <h2 class="project-name" id="finance-case-study-title">Finance Dashboard</h2>
+              </div>
+              <button class="case-study-dialog-close" type="button" aria-label="Close project details">Close <span aria-hidden="true">×</span></button>
+            </div>
+            <p class="case-study-dialog-intro">
+              A Flask application that brings personal finance activity and insights together in one dashboard.
+            </p>
+            <div class="case-study-details">
+              <div class="case-study-block">
+                <h3>The problem</h3>
+                <p>
+                  Income, spending, budgets, and account activity can be difficult
+                  to follow across separate records. The dashboard gives users one
+                  place to review their finances and manage transactions.
+                </p>
+              </div>
+              <div class="case-study-block">
+                <h3>What I built</h3>
+                <ul class="case-study-features">
+                  <li>Monthly income, spending, savings-rate, and net-worth overview</li>
+                  <li>Budget tracking and category spending charts</li>
+                  <li>Account management, transaction history, and income/expense entry</li>
+                  <li>Bank statement imports</li>
+                </ul>
+              </div>
+              <div class="case-study-block case-study-block-wide">
+                <h3>A technical challenge</h3>
+                <p>
+                  Bank statement exports use different column names and transaction
+                  conventions. I built format-independent parsing with header aliases
+                  and explicit errors, so supported PDF and spreadsheet exports can
+                  be normalized into consistent transaction records.
+                </p>
+              </div>
+            </div>
+            <div class="project-links case-study-dialog-links">
+              <a href="https://meghnaghosh.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="project-link">↗ Open live app</a>
+              <a href="https://github.com/meghna24001/Finance-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link">View source code</a>
+            </div>
+          </dialog>
+        </article>
       </div>
     </section>
 

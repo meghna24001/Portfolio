@@ -71,6 +71,34 @@ if (!reducedMotion) {
   });
 }
 
+/* Finance Dashboard case study dialog */
+const caseStudyDialog = document.getElementById("finance-case-study");
+const caseStudyOpenButton = document.querySelector(".project-more-button");
+const caseStudyCloseButton = document.querySelector(".case-study-dialog-close");
+
+if (caseStudyDialog && caseStudyOpenButton && caseStudyCloseButton) {
+  caseStudyOpenButton.addEventListener("click", () => {
+    caseStudyDialog.showModal();
+  });
+
+  caseStudyCloseButton.addEventListener("click", () => {
+    caseStudyDialog.close();
+  });
+
+  caseStudyDialog.addEventListener("click", (event) => {
+    if (event.target === caseStudyDialog) {
+      caseStudyDialog.close();
+    }
+  });
+
+  caseStudyDialog.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      caseStudyDialog.close();
+    }
+  });
+}
+
 /* Mobile navigation */
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
