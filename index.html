@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Meghna Ghosh | Portfolio</title>
+    <meta name="theme-color" id="themeColor" content="#0d0d0d" />
     <meta name="description" content="Meghna Ghosh is a BCA student in Kolkata building web projects with HTML, CSS, JavaScript, and Python. Explore her projects and developer journey." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://meghna24001.github.io/Portfolio/" />
@@ -31,12 +32,6 @@
     <nav>
       <a href="#hero" class="nav-logo">MG</a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-      </button>
-
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
@@ -44,12 +39,45 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+      </div>
     </nav>
 
     <!-- HERO -->
     <section id="hero">
       <div class="hero-grid-bg"></div>
       <div class="hero-glow"></div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orbit hero-orbit-outer"></div>
+        <div class="hero-orbit hero-orbit-inner"></div>
+        <div class="hero-orbit-core">
+          <span>MG</span>
+          <i></i>
+        </div>
+        <div class="hero-float-card hero-float-card-top">
+          <span class="hero-card-index">01 / BUILD</span>
+          <span class="hero-card-copy">Turning ideas<br />into useful things.</span>
+        </div>
+        <div class="hero-float-card hero-float-card-bottom">
+          <span class="hero-card-live-dot"></span>
+          <span>CURIOUS BY DESIGN</span>
+        </div>
+      </div>
       <div class="hero-content">
         <div class="hero-tag">Open to opportunities</div>
         <h1 class="hero-name">Meghna Ghosh</h1>

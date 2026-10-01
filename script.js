@@ -46,6 +46,54 @@ if (prefersFinePointer && !reducedMotion && cursor && ring) {
   if (ring) ring.style.display = "none";
 }
 
+/* Persist the user's selected color theme */
+const themeToggle = document.getElementById("themeToggle");
+const themeColorMeta = document.getElementById("themeColor");
+const themeStorageKey = "portfolio-theme";
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+
+  if (themeToggle) {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    const label = `Switch to ${nextTheme} theme`;
+    themeToggle.setAttribute("aria-label", label);
+    themeToggle.setAttribute("title", label);
+    themeToggle.setAttribute("aria-pressed", String(theme === "light"));
+  }
+
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute(
+      "content",
+      theme === "light" ? "#f4f6f0" : "#0d0d0d"
+    );
+  }
+}
+
+let storedTheme = null;
+
+try {
+  storedTheme = window.localStorage.getItem(themeStorageKey);
+} catch (error) {
+  console.warn("Unable to read the saved portfolio theme preference.", error);
+}
+
+applyTheme(storedTheme === "light" ? "light" : "dark");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme =
+      document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    applyTheme(nextTheme);
+
+    try {
+      window.localStorage.setItem(themeStorageKey, nextTheme);
+    } catch (error) {
+      console.warn("Unable to save the portfolio theme preference.", error);
+    }
+  });
+}
+
 /* Reveal non-hero sections as they enter the screen */
 const sections = document.querySelectorAll("section:not(#hero)");
 const revealItems = document.querySelectorAll(".skill-card, .project-card");
