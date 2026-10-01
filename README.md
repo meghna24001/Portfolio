@@ -36,3 +36,7 @@ In the repository settings, open **Pages**, choose **Deploy from a branch**, and
 
 - Email: [ghoshmeghna2001@gmail.com](mailto:ghoshmeghna2001@gmail.com)
 - GitHub: [github.com/meghna24001](https://github.com/meghna24001)
+
+The contact form submits through Formspree. Its endpoint is configured in the
+form's `data-formspree-endpoint` attribute in `index.html`. Verify the recipient
+email and test a submission from the live site after deployment.

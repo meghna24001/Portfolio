@@ -220,6 +220,94 @@ if (caseStudyDialog && caseStudyOpenButton && caseStudyCloseButton) {
   });
 }
 
+/* Submit contact messages through the configured Formspree form */
+const contactForm = document.getElementById("contactForm");
+const contactFormStatus = document.getElementById("contactFormStatus");
+
+if (contactForm instanceof HTMLFormElement && contactFormStatus) {
+  function parseFormspreeEndpoint(endpoint) {
+    try {
+      const url = new URL(endpoint);
+      if (
+        url.protocol === "https:" &&
+        url.hostname === "formspree.io" &&
+        /^\/f\/[A-Za-z0-9]+$/.test(url.pathname)
+      ) {
+        return url;
+      }
+    } catch {
+      return null;
+    }
+
+    return null;
+  }
+
+  const configuredEndpoint = contactForm.dataset.formspreeEndpoint?.trim() ?? "";
+  if (parseFormspreeEndpoint(configuredEndpoint)) {
+    contactFormStatus.textContent = "";
+  }
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.reportValidity()) return;
+
+    const endpoint = contactForm.dataset.formspreeEndpoint?.trim() ?? "";
+    const endpointUrl = parseFormspreeEndpoint(endpoint);
+    if (!endpointUrl && !endpoint) {
+      contactFormStatus.textContent =
+        "Form delivery is not configured yet. Add your Formspree endpoint to activate message sending.";
+      return;
+    }
+
+    if (!endpointUrl) {
+      contactFormStatus.textContent =
+        "Form delivery is not configured yet. Add your Formspree endpoint in the format https://formspree.io/f/your-form-id.";
+      console.warn("The configured Formspree endpoint has an invalid format.");
+      return;
+    }
+
+    const submitButton = contactForm.querySelector(".contact-submit");
+    const submitLabel = submitButton?.querySelector("span");
+    const originalLabel = submitLabel?.textContent ?? "Send Message";
+
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+    }
+    if (submitLabel) submitLabel.textContent = "Sending…";
+    contactFormStatus.textContent = "Sending your message…";
+
+    try {
+      const response = await fetch(endpointUrl, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        contactFormStatus.textContent =
+          `We couldn't send your message (server error ${response.status}). Please try again or email directly.`;
+        return;
+      }
+
+      contactForm.reset();
+      contactFormStatus.textContent =
+        "Thanks for reaching out! Your message has been sent.";
+    } catch (error) {
+      console.error("Unable to submit the contact form.", error);
+      contactFormStatus.textContent =
+        "We couldn't send your message because of a connection problem. Please try again or email directly.";
+    } finally {
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+      }
+      if (submitLabel) submitLabel.textContent = originalLabel;
+    }
+  });
+}
+
 /* Mobile navigation */
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
