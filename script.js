@@ -48,10 +48,15 @@ if (prefersFinePointer && !reducedMotion && cursor && ring) {
 
 /* Reveal non-hero sections as they enter the screen */
 const sections = document.querySelectorAll("section:not(#hero)");
+const revealItems = document.querySelectorAll(".skill-card, .project-card");
 
 if (!reducedMotion) {
   sections.forEach((section) => {
     section.classList.add("reveal-section");
+  });
+
+  revealItems.forEach((item) => {
+    item.classList.add("reveal-item");
   });
 
   const sectionObserver = new IntersectionObserver(
@@ -68,6 +73,74 @@ if (!reducedMotion) {
 
   sections.forEach((section) => {
     sectionObserver.observe(section);
+  });
+
+  revealItems.forEach((item) => {
+    sectionObserver.observe(item);
+  });
+}
+
+/* Reading progress and active section in the navigation */
+const scrollProgress = document.getElementById("scrollProgress");
+const navigationLinks = Array.from(
+  document.querySelectorAll('.nav-links a[href^="#"]')
+);
+const navigationSections = navigationLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter((section) => section instanceof HTMLElement);
+
+if (scrollProgress) {
+  let progressFrame = 0;
+
+  const updateScrollProgress = () => {
+    progressFrame = 0;
+    const scrollableHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const progress =
+      scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+
+    scrollProgress.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+  };
+
+  const requestProgressUpdate = () => {
+    if (!progressFrame) {
+      progressFrame = window.requestAnimationFrame(updateScrollProgress);
+    }
+  };
+
+  window.addEventListener("scroll", requestProgressUpdate, { passive: true });
+  window.addEventListener("resize", requestProgressUpdate);
+  updateScrollProgress();
+}
+
+if (navigationSections.length > 0) {
+  const navigationObserver = new IntersectionObserver(
+    (entries) => {
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort(
+          (first, second) =>
+            Math.abs(first.boundingClientRect.top - window.innerHeight * 0.4) -
+            Math.abs(second.boundingClientRect.top - window.innerHeight * 0.4)
+        );
+
+      if (visibleSections.length === 0) return;
+
+      const activeId = visibleSections[0].target.id;
+
+      navigationLinks.forEach((link) => {
+        if (link.hash === `#${activeId}`) {
+          link.setAttribute("aria-current", "location");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    },
+    { rootMargin: "-35% 0px -55% 0px" }
+  );
+
+  navigationSections.forEach((section) => {
+    navigationObserver.observe(section);
   });
 }
 
