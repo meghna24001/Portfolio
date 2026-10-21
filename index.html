@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meghna Ghosh | Aspiring Software Developer &amp; Web Developer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Meghna Ghosh - BCA student, Aspiring Software Developer, Python & Web Developer. Explore projects, technical skills, academic background, and contact details.">
+  <meta name="keywords" content="Meghna Ghosh, Software Developer, Python Developer, Web Developer, BCA, Flask, React, Portfolio">
+  <meta name="author" content="Meghna Ghosh">
+
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="Meghna Ghosh | Portfolio">
+  <meta property="og:description" content="Building thoughtful software, one project at a time. Explore projects, technical skills, and resume.">
+  <meta property="og:url" content="https://meghna24001.github.io/Portfolio">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23161412' stroke='%23C8A15A' stroke-width='4'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='42' fill='%23C8A15A'>MG</text></svg>">
+
+  <!-- Google Fonts: Syne & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="header" id="header">
+    <div class="header-container container">
+      <!-- Monogram Brand Logo -->
+      <a href="#home" class="brand-monogram" aria-label="Meghna Ghosh Home">
+        <span class="monogram-circle">MG</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Actions -->
+      <div class="header-actions">
+        <a href="assets/Meghna_Ghosh_Resume.pdf" download="Meghna_Ghosh_Resume.pdf" class="btn btn-outline btn-sm cv-download-trigger" aria-label="Download CV as PDF">
+          <span>Download CV</span>
+          <svg class="btn-icon-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <div class="brand-monogram">
+        <span class="monogram-circle">MG</span>
+      </div>
+      <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-cta">
+        <a href="assets/Meghna_Ghosh_Resume.pdf" download="Meghna_Ghosh_Resume.pdf" class="btn btn-outline btn-full cv-download-trigger" aria-label="Download CV">
+          <span>Download CV</span>
+          <svg class="btn-icon-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- ==================== 1. LANDING HERO SECTION ==================== -->
+    <section class="section landing-section" id="home">
+      <div class="container hero-container">
+        <!-- Hero Monogram Mark -->
+        <div class="hero-mark animate-hero" data-order="1">
+          <div class="hero-monogram-badge">MG</div>
+        </div>
+
+        <!-- Very Large Main Heading -->
+        <h1 class="hero-title animate-hero" data-order="2">Meghna Ghosh</h1>
+
+        <!-- Designations Row -->
+        <div class="hero-designations animate-hero" data-order="3">
+          <span class="designation-item">Aspiring Software Developer</span>
+          <span class="designation-dot" aria-hidden="true">•</span>
+          <span class="designation-item">Python Developer</span>
+          <span class="designation-dot" aria-hidden="true">•</span>
+          <span class="designation-item">Web Developer</span>
+          <span class="designation-dot" aria-hidden="true">•</span>
+          <span class="designation-item">BCA Student</span>
+        </div>
+
+        <!-- Intro Paragraph -->
+        <p class="hero-intro animate-hero" data-order="4">
+          I'm a BCA student who enjoys turning ideas into clean, working web applications. I build with Python, Flask, JavaScript and React, and I care about thoughtful design, solid architecture and clear documentation.
+        </p>
+
+        <!-- 3 CTA Buttons -->
+        <div class="hero-ctas">
+          <a href="#about" class="btn btn-primary hero-btn animate-hero-btn" data-order="5">
+            <span>Learn More About Me</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary hero-btn animate-hero-btn" data-order="6">
+            <span>Get In Touch</span>
+          </a>
+          <a href="assets/Meghna_Ghosh_Resume.pdf" download="Meghna_Ghosh_Resume.pdf" class="btn btn-outline hero-btn cv-download-trigger animate-hero-btn" data-order="7" aria-label="Download CV as PDF">
+            <span>Download CV</span>
+            <svg class="btn-icon-down" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Social Icons Row -->
+        <div class="hero-socials">
+          <a href="https://github.com/meghna24001" target="_blank" rel="noopener noreferrer" class="social-icon-btn animate-hero-social" data-order="8" aria-label="Meghna Ghosh on GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/meghna-ghosh-062134275" target="_blank" rel="noopener noreferrer" class="social-icon-btn animate-hero-social" data-order="9" aria-label="Meghna Ghosh on LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:ghoshmeghna2001@gmail.com" class="social-icon-btn animate-hero-social" data-order="10" aria-label="Send direct email to Meghna Ghosh">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT ME SECTION ==================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="eyebrow">ABOUT ME</span>
+          <h2 class="section-title">Background &amp; Aspirations</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Portrait & "View My Work" Buttons -->
+          <div class="about-left-col">
+            <div class="about-photo-wrapper animate-on-scroll" data-animation="photo-slide">
+              <div class="photo-frame">
+                <img src="assets/profile.jpg" alt="Meghna Ghosh Portrait" class="profile-photo" id="profile-img" loading="lazy">
+                <!-- Fallback Monogram Avatar if photo is missing -->
+                <div class="profile-monogram-fallback" id="profile-monogram" aria-hidden="true">
+                  <span class="monogram-text">MG</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 "View My Work" Shortcut Buttons -->
+            <div class="work-shortcuts animate-on-scroll" data-animation="shortcuts-stagger">
+              <a href="#education" class="btn-work-shortcut">
+                <span>Education</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <a href="#projects" class="btn-work-shortcut">
+                <span>Projects</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <a href="#skills" class="btn-work-shortcut">
+                <span>Skills</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Summary & Mission/Vision Cards -->
+          <div class="about-right-col">
+            <div class="about-summary-card">
+              <p class="about-summary-text">
+                I'm a second-year Bachelor of Computer Applications student at Indira Gandhi National Open University, building toward a career in software and web development. Python is my strongest language, and I use it with Flask and MySQL to build full-stack applications, alongside HTML, CSS and JavaScript on the front end. I also work with React 18, TypeScript, Tailwind CSS, Node.js and Express, and I'm comfortable with SQLite and PostgreSQL. I plan, architect, build, deploy and document my projects end to end, using Git, VS Code, Vite and platforms such as Render, Vercel and PythonAnywhere. My work ranges from a framework-free calculator hub to a Flask finance platform and a full-stack vehicle service management system. What sets me apart is that I ship complete, documented products rather than isolated exercises. I'm now looking for internships and entry-level roles where I can learn fast and contribute.
+              </p>
+            </div>
+
+            <!-- Mission & Vision 3D Flip Cards -->
+            <div class="mv-cards-grid">
+              <!-- Mission Card -->
+              <div class="mv-card-perspective">
+                <div class="mv-card mission-card animate-on-scroll" data-animation="card-flip-mission">
+                  <div class="mv-card-header">
+                    <span class="mv-badge">Mission</span>
+                    <svg class="mv-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="12" r="6"></circle>
+                      <circle cx="12" cy="12" r="2"></circle>
+                    </svg>
+                  </div>
+                  <p class="mv-card-copy">
+                    "To build reliable, well-designed software that solves real problems, and to keep learning through hands-on projects, clean code and clear documentation."
+                  </p>
+                </div>
+              </div>
+
+              <!-- Vision Card -->
+              <div class="mv-card-perspective">
+                <div class="mv-card vision-card animate-on-scroll" data-animation="card-flip-vision">
+                  <div class="mv-card-header">
+                    <span class="mv-badge">Vision</span>
+                    <svg class="mv-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </div>
+                  <p class="mv-card-copy">
+                    "To grow into a versatile software engineer who designs and ships impactful products across web and application development."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. EXPERIENCE SECTION ==================== -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="eyebrow">EXPERIENCE</span>
+          <h2 class="section-title">Projects &amp; Career Direction</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="experience-cards-wrapper">
+          <!-- Card 1: Independent Developer -->
+          <div class="exp-card animate-on-scroll" data-animation="exp-slide-left">
+            <div class="exp-panel-dark">
+              <span class="exp-badge">Independent</span>
+              <h3 class="exp-panel-role">Personal Projects</h3>
+              <p class="exp-panel-subtitle">Independent Developer</p>
+            </div>
+            <div class="exp-panel-light">
+              <p class="exp-desc">
+                Independent project work covering end-to-end planning, architecture, development, deployment and documentation of web applications.
+              </p>
+              <ul class="exp-bullets">
+                <li class="exp-bullet-item">
+                  <span class="bullet-gold-dot" aria-hidden="true"></span>
+                  <span>Planned and architected full-stack web apps from scratch</span>
+                </li>
+                <li class="exp-bullet-item">
+                  <span class="bullet-gold-dot" aria-hidden="true"></span>
+                  <span>Built and deployed projects on Render, Vercel and PythonAnywhere</span>
+                </li>
+                <li class="exp-bullet-item">
+                  <span class="bullet-gold-dot" aria-hidden="true"></span>
+                  <span>Wrote technical documentation for every project</span>
+                </li>
+                <li class="exp-bullet-item">
+                  <span class="bullet-gold-dot" aria-hidden="true"></span>
+                  <span>Used Git for version control throughout</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 2: Career Interests -->
+          <div class="exp-card exp-card-reverse animate-on-scroll" data-animation="exp-slide-right">
+            <div class="exp-panel-dark">
+              <span class="exp-badge">Open To Work</span>
+              <h3 class="exp-panel-role">Career Interests</h3>
+              <p class="exp-panel-subtitle">Internships &amp; Entry-Level Roles</p>
+            </div>
+            <div class="exp-panel-light">
+              <p class="exp-desc">
+                Open to internships and entry-level roles across Software Development, Python Programming, Web Development and broader IT roles.
+              </p>
+              <ul class="exp-bullets">
+                <li class="exp-bullet-item">
+                  <span class="bullet-gold-dot" aria-hidden="true"></span>
+                  <span><strong>Software Development:</strong> Entry-level software engineering focusing on scalable architecture, clean code principles, and end-to-end implementation.</span>
+                </li>
+                <li class="exp-bullet-item">
+                  <span class="bullet-gold-dot" aria-hidden="true"></span>
+                  <span><strong>Python Programming:</strong> Python development using Flask, backend API integration, data manipulation, and script automation.</span>
+                </li>
+                <li class="exp-bullet-item">
+                  <span class="bullet-gold-dot" aria-hidden="true"></span>
+                  <span><strong>Web Development:</strong> Front-end and full-stack responsive web applications using modern HTML/CSS/JS, React 18, and RESTful web services.</span>
+                </li>
+                <li class="exp-bullet-item">
+                  <span class="bullet-gold-dot" aria-hidden="true"></span>
+                  <span><strong>Broader IT Roles:</strong> System troubleshooting, technical support, application deployment, database maintenance, and technical documentation.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. EDUCATION SECTION ==================== -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="eyebrow">EDUCATION</span>
+          <h2 class="section-title">Academic Foundation &amp; Languages</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="education-grid">
+          <!-- Card 1: BCA Qualification Card -->
+          <div class="edu-card edu-card-main animate-on-scroll" data-animation="edu-drop">
+            <div class="edu-card-inner">
+              <div class="edu-card-header">
+                <div class="edu-title-group">
+                  <span class="edu-qualification">Bachelor of Computer Applications (BCA)</span>
+                  <h3 class="edu-institution">Indira Gandhi National Open University (IGNOU), New Delhi</h3>
+                  <div class="edu-meta-row">
+                    <span class="edu-meta-pill">Currently in Second Year</span>
+                    <span class="edu-meta-pill">Expected Graduation 2028</span>
+                    <span class="edu-meta-pill">Open &amp; Distance Learning (Part-time)</span>
+                  </div>
+                </div>
+                <div class="edu-icon-wrapper" aria-hidden="true">
+                  <svg class="edu-grad-icon" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="edu-highlights-block">
+                <h4 class="edu-highlights-title">Key Highlights</h4>
+                <ul class="edu-highlights-list">
+                  <li class="edu-highlight-item">
+                    <svg class="bullet-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Core computing foundations - programming, data structures and databases</span>
+                  </li>
+                  <li class="edu-highlight-item">
+                    <svg class="bullet-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Strong hands-on practice through applied web and application projects</span>
+                  </li>
+                  <li class="edu-highlight-item">
+                    <svg class="bullet-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Self-driven learning beyond the syllabus in React, TypeScript and Node.js</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- SVG Border Trace Overlay -->
+            <svg class="card-border-svg" aria-hidden="true">
+              <rect x="1" y="1" width="99%" height="98%" rx="16" ry="16"></rect>
+            </svg>
+          </div>
+
+          <!-- Card 2: Languages Card -->
+          <div class="edu-card edu-card-lang animate-on-scroll" data-animation="edu-rise">
+            <div class="edu-card-inner">
+              <div class="lang-header">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lang-icon" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <h3 class="lang-card-title">Languages</h3>
+              </div>
+              <ul class="lang-list">
+                <li class="lang-item">
+                  <div class="lang-info">
+                    <span class="lang-name">English</span>
+                    <span class="lang-level">Proficient</span>
+                  </div>
+                  <div class="lang-bar-track">
+                    <div class="lang-bar-fill" style="width: 88%;"></div>
+                  </div>
+                </li>
+                <li class="lang-item">
+                  <div class="lang-info">
+                    <span class="lang-name">Bengali</span>
+                    <span class="lang-level">Native</span>
+                  </div>
+                  <div class="lang-bar-track">
+                    <div class="lang-bar-fill" style="width: 100%;"></div>
+                  </div>
+                </li>
+                <li class="lang-item">
+                  <div class="lang-info">
+                    <span class="lang-name">Hindi</span>
+                    <span class="lang-level">Intermediate</span>
+                  </div>
+                  <div class="lang-bar-track">
+                    <div class="lang-bar-fill" style="width: 75%;"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- SVG Border Trace Overlay -->
+            <svg class="card-border-svg" aria-hidden="true">
+              <rect x="1" y="1" width="99%" height="98%" rx="16" ry="16"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. PROJECTS SECTION ==================== -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="eyebrow">FEATURED WORK</span>
+          <h2 class="section-title">Selected Projects</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <!-- Dynamic Container for Project Cards rendered via script.js -->
+        <div class="projects-container" id="projects-grid">
+          <!-- Populated from PROJECTS config object in script.js -->
+          <noscript>
+            <p class="noscript-notice">Please enable JavaScript to view project portfolio showcase.</p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. SKILLS SECTION ==================== -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="eyebrow">CAPABILITIES</span>
+          <h2 class="section-title">Technical Skills &amp; Competencies</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <!-- 1. Programming Languages -->
+          <div class="skill-category-card animate-on-scroll" data-animation="skill-card-wave" data-index="0">
+            <div class="skill-card-top">
+              <div class="skill-cat-icon-wrap" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="skill-cat-title">Programming Languages</h3>
+            </div>
+            <div class="skill-bars-list">
+              <div class="skill-item" data-value="90">
+                <div class="skill-label-row">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="72">
+                <div class="skill-label-row">
+                  <span class="skill-name">C++</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Web Technologies -->
+          <div class="skill-category-card animate-on-scroll" data-animation="skill-card-wave" data-index="1">
+            <div class="skill-card-top">
+              <div class="skill-cat-icon-wrap" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <h3 class="skill-cat-title">Web Technologies</h3>
+            </div>
+            <div class="skill-bars-list">
+              <div class="skill-item" data-value="90">
+                <div class="skill-label-row">
+                  <span class="skill-name">HTML</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="85">
+                <div class="skill-label-row">
+                  <span class="skill-name">CSS</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="82">
+                <div class="skill-label-row">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Frameworks & Libraries -->
+          <div class="skill-category-card animate-on-scroll" data-animation="skill-card-wave" data-index="2">
+            <div class="skill-card-top">
+              <div class="skill-cat-icon-wrap" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                </svg>
+              </div>
+              <h3 class="skill-cat-title">Frameworks &amp; Libraries</h3>
+            </div>
+            <div class="skill-bars-list">
+              <div class="skill-item" data-value="85">
+                <div class="skill-label-row">
+                  <span class="skill-name">Flask</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="78">
+                <div class="skill-label-row">
+                  <span class="skill-name">React 18</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="82">
+                <div class="skill-label-row">
+                  <span class="skill-name">Tailwind CSS</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="75">
+                <div class="skill-label-row">
+                  <span class="skill-name">Node.js / Express</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="72">
+                <div class="skill-label-row">
+                  <span class="skill-name">TypeScript</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Databases -->
+          <div class="skill-category-card animate-on-scroll" data-animation="skill-card-wave" data-index="3">
+            <div class="skill-card-top">
+              <div class="skill-cat-icon-wrap" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3 class="skill-cat-title">Databases</h3>
+            </div>
+            <div class="skill-bars-list">
+              <div class="skill-item" data-value="80">
+                <div class="skill-label-row">
+                  <span class="skill-name">MySQL</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="82">
+                <div class="skill-label-row">
+                  <span class="skill-name">SQLite</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="72">
+                <div class="skill-label-row">
+                  <span class="skill-name">PostgreSQL</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Tools & Platforms -->
+          <div class="skill-category-card animate-on-scroll" data-animation="skill-card-wave" data-index="4">
+            <div class="skill-card-top">
+              <div class="skill-cat-icon-wrap" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h3 class="skill-cat-title">Tools &amp; Platforms</h3>
+            </div>
+            <div class="skill-bars-list">
+              <div class="skill-item" data-value="82">
+                <div class="skill-label-row">
+                  <span class="skill-name">Git</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="90">
+                <div class="skill-label-row">
+                  <span class="skill-name">VS Code</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="75">
+                <div class="skill-label-row">
+                  <span class="skill-name">Vite</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Core Competencies -->
+          <div class="skill-category-card animate-on-scroll" data-animation="skill-card-wave" data-index="5">
+            <div class="skill-card-top">
+              <div class="skill-cat-icon-wrap" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3 class="skill-cat-title">Core Competencies</h3>
+            </div>
+            <div class="skill-bars-list">
+              <div class="skill-item" data-value="85">
+                <div class="skill-label-row">
+                  <span class="skill-name">Web Development</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="82">
+                <div class="skill-label-row">
+                  <span class="skill-name">Application Development</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="85">
+                <div class="skill-label-row">
+                  <span class="skill-name">Problem Solving</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+              <div class="skill-item" data-value="85">
+                <div class="skill-label-row">
+                  <span class="skill-name">Technical Documentation</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width: 0%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. CONTACT SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="eyebrow">GET IN TOUCH</span>
+          <h2 class="section-title">Let's Build Something Great Together</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Clean Off-White Form Card -->
+          <div class="contact-form-card animate-on-scroll" data-animation="contact-slide-left">
+            <form id="contact-form" class="contact-form" novalidate>
+              <!-- Hidden Honeypot field for spam prevention -->
+              <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <!-- Full Name Field with Floating Label -->
+              <div class="form-group">
+                <div class="floating-field-wrap">
+                  <input type="text" id="form-name" name="name" class="form-input" placeholder=" " required>
+                  <label for="form-name" class="floating-label">Full Name</label>
+                  <span class="field-underline" aria-hidden="true"></span>
+                </div>
+                <span class="field-error" id="name-error" role="alert"></span>
+              </div>
+
+              <!-- Email Address Field with Floating Label -->
+              <div class="form-group">
+                <div class="floating-field-wrap">
+                  <input type="email" id="form-email" name="email" class="form-input" placeholder=" " required>
+                  <label for="form-email" class="floating-label">Email Address</label>
+                  <span class="field-underline" aria-hidden="true"></span>
+                </div>
+                <span class="field-error" id="email-error" role="alert"></span>
+              </div>
+
+              <!-- Subject Field with Floating Label -->
+              <div class="form-group">
+                <div class="floating-field-wrap">
+                  <input type="text" id="form-subject" name="subject" class="form-input" placeholder=" " required>
+                  <label for="form-subject" class="floating-label">Subject</label>
+                  <span class="field-underline" aria-hidden="true"></span>
+                </div>
+                <span class="field-error" id="subject-error" role="alert"></span>
+              </div>
+
+              <!-- Message Field with Floating Label -->
+              <div class="form-group">
+                <div class="floating-field-wrap">
+                  <textarea id="form-message" name="message" class="form-textarea" rows="4" placeholder=" " required></textarea>
+                  <label for="form-message" class="floating-label">Message</label>
+                  <span class="field-underline" aria-hidden="true"></span>
+                </div>
+                <span class="field-error" id="message-error" role="alert"></span>
+              </div>
+
+              <!-- Submit Button with Pulse & Shimmer -->
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                  <span class="btn-text">Send Message</span>
+                  <svg class="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+                    <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+                  </svg>
+                  <span class="btn-shimmer" aria-hidden="true"></span>
+                </button>
+              </div>
+
+              <!-- Form Notification Status Box -->
+              <div class="form-status-alert" id="form-status" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- Right Column: Dark Contact Information Panel -->
+          <div class="contact-info-panel animate-on-scroll" data-animation="contact-slide-right">
+            <h3 class="info-panel-title">Direct Connection</h3>
+            <p class="info-panel-subtitle">Reach out for collaborations, entry-level opportunities, or engineering discussions.</p>
+
+            <div class="info-rows-list">
+              <!-- Email Row -->
+              <a href="mailto:ghoshmeghna2001@gmail.com" class="info-row" aria-label="Email Meghna Ghosh">
+                <div class="info-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <span class="info-label">Email</span>
+                  <span class="info-val">ghoshmeghna2001@gmail.com</span>
+                </div>
+              </a>
+
+              <!-- Phone Row -->
+              <a href="tel:+919830195166" class="info-row" aria-label="Call Meghna Ghosh">
+                <div class="info-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <span class="info-label">Phone</span>
+                  <span class="info-val">+91 98301 95166</span>
+                </div>
+              </a>
+
+              <!-- Location Row -->
+              <div class="info-row info-row-static">
+                <div class="info-icon-box" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <span class="info-label">Location</span>
+                  <span class="info-val">Kolkata, India 700034</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links in Contact Panel -->
+            <div class="info-panel-socials">
+              <span class="socials-label">Connect Online</span>
+              <div class="socials-buttons-row">
+                <a href="https://github.com/meghna24001" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com/in/meghna-ghosh-062134275" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <h3 class="footer-name">Meghna Ghosh</h3>
+        <p class="footer-tagline">Building thoughtful software, one project at a time.</p>
+      </div>
+
+      <div class="footer-center">
+        <div class="footer-socials">
+          <a href="https://github.com/meghna24001" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Meghna Ghosh on GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/meghna-ghosh-062134275" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Meghna Ghosh on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:ghoshmeghna2001@gmail.com" class="social-icon-btn" aria-label="Email Meghna Ghosh">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <a href="assets/Meghna_Ghosh_Resume.pdf" download="Meghna_Ghosh_Resume.pdf" class="footer-link cv-download-trigger">Download CV</a>
+        <span class="footer-divider" aria-hidden="true">•</span>
+        <a href="#home" class="footer-link back-to-top-btn" id="back-to-top">
+          <span>Back to top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p class="copyright-text">&copy; <span id="current-year">2026</span> Meghna Ghosh. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Generic Fallback Toast / Modal Notification -->
+  <div class="toast-notification" id="toast-notification" role="status" aria-live="polite">
+    <div class="toast-content" id="toast-content">Notification message</div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
+
