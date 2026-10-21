@@ -211,38 +211,38 @@ function initNavigation() {
   const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
   const sections = document.querySelectorAll("section[id]");
 
-  // 1. Sticky Header State on Scroll
-  window.addEventListener("scroll", () => {
+  // 1. Sticky Header State on Scroll & Startup
+  function updateHeaderScrolled() {
     if (window.scrollY > 40) {
       header.classList.add("is-scrolled");
     } else {
       header.classList.remove("is-scrolled");
     }
+  }
+  window.addEventListener("scroll", updateHeaderScrolled, { passive: true });
+  updateHeaderScrolled();
+
+  // 2. Active Section Highlight using Scroll Position
+  const sectionList = Array.from(sections);
+  function updateActiveLink() {
+    const marker = window.scrollY + window.innerHeight * 0.35;
+    let currentId = sectionList[0].id;
+    sectionList.forEach(sec => { if (sec.offsetTop <= marker) currentId = sec.id; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      currentId = sectionList[sectionList.length - 1].id;
+    }
+    navLinks.forEach(link =>
+      link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`)
+    );
+  }
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
   }, { passive: true });
-
-  // 2. Active Section Highlight using IntersectionObserver
-  const observerOptions = {
-    root: null,
-    rootMargin: "-20% 0px -60% 0px",
-    threshold: 0
-  };
-
-  const activeSectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute("id");
-        navLinks.forEach(link => {
-          if (link.getAttribute("href") === `#${id}`) {
-            link.classList.add("active");
-          } else {
-            link.classList.remove("active");
-          }
-        });
-      }
-    });
-  }, observerOptions);
-
-  sections.forEach(section => activeSectionObserver.observe(section));
+  updateActiveLink();
 
   // 3. Smooth Anchor Scrolling Offset Compensation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -328,6 +328,9 @@ function initMobileDrawer() {
    Triggered once per element with hardware-accelerated transitions.
    -------------------------------------------------------------------------- */
 function initScrollAnimations() {
+  document.querySelectorAll(".skill-category-card").forEach(c =>
+    c.style.setProperty("--wave-delay", `${Number(c.dataset.index) * 80}ms`));
+
   // If user prefers reduced motion, trigger final state immediately
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -512,6 +515,7 @@ function initContactForm() {
       // Spam bot detected: simulate fake instant success
       form.reset();
       showStatus("Thank you! Your message has been sent successfully.", "success");
+      showToast("Thank you! Your message has been sent successfully.");
       return;
     }
 
@@ -529,7 +533,7 @@ function initContactForm() {
     // Enter Loading State
     submitBtn.classList.add("is-loading");
     submitBtn.setAttribute("disabled", "true");
-    statusAlert.style.display = "none";
+    showStatus("Sending your message...", "info");
 
     const payload = {
       name: nameInput.value.trim(),
@@ -552,16 +556,21 @@ function initContactForm() {
       if (response.ok) {
         form.reset();
         showStatus("Thank you! Your message has been sent successfully.", "success");
+        showToast("Thank you! Your message has been sent successfully.");
       } else {
         throw new Error("Server responded with error status");
       }
     } catch (err) {
       console.warn("FormSubmit fetch error:", err);
-      showStatus("Direct submission unavailable. Opening your default email client...", "error");
+      showStatus("Unable to send message directly. Opening your default email client...", "error");
 
       // Mailto Fallback
       setTimeout(() => {
-        const mailtoUrl = `mailto:ghoshmeghna2001@gmail.com?subject=${encodeURIComponent(payload.subject)}&body=${encodeURIComponent("Name: " + payload.name + "\nEmail: " + payload.email + "\n\n" + payload.message)}`;
+        const mailtoSubject = encodeURIComponent(payload.subject || "Portfolio Contact");
+        const mailtoBody = encodeURIComponent(
+          `Name: ${payload.name}\nEmail: ${payload.email}\n\n${payload.message}`
+        );
+        const mailtoUrl = `mailto:ghoshmeghna2001@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
         window.location.href = mailtoUrl;
       }, 1000);
     } finally {
@@ -599,15 +608,33 @@ function initAssetFallbacks() {
     });
   }
 
-  // 2. Resume File Download Check
+  // 2. Resume File Download Check (HEAD check with toast fallback)
   const cvTriggers = document.querySelectorAll(".cv-download-trigger");
   cvTriggers.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      // Validate if resume file target is reachable
+    btn.addEventListener("click", async (e) => {
+      if (window.location.protocol === "file:") {
+        // file:// protocol prevents fetch; allow native download
+        return;
+      }
+
+      e.preventDefault();
       const resumeUrl = btn.getAttribute("href");
-      if (!resumeUrl || resumeUrl.trim() === "#") {
-        e.preventDefault();
-        showToast("Resume is being updated. Please contact ghoshmeghna2001@gmail.com directly.");
+      const downloadName = btn.getAttribute("download") || "Meghna_Ghosh_Resume.pdf";
+
+      try {
+        const res = await fetch(resumeUrl, { method: "HEAD" });
+        if (res.ok) {
+          const tempLink = document.createElement("a");
+          tempLink.href = resumeUrl;
+          tempLink.download = downloadName;
+          document.body.appendChild(tempLink);
+          tempLink.click();
+          tempLink.remove();
+        } else {
+          showToast("Resume will be available soon. In the meantime, please connect via email at ghoshmeghna2001@gmail.com.");
+        }
+      } catch (err) {
+        showToast("Resume will be available soon. In the meantime, please connect via email at ghoshmeghna2001@gmail.com.");
       }
     });
   });

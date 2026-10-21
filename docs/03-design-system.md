@@ -210,6 +210,9 @@ All transitions and keyframes share consistent timing curves:
    - Text `#161412` on `#FBF8F3` = 16.5:1.
    - Text `#C8A15A` on `#0E0D0C` = 6.5:1.
    - Gold button text `#0E0D0C` on `#C8A15A` = 6.5:1.
+   - Dark bronze text `#8A5A2B` on light card `#FBF8F3` = 5.54:1.
+   - Muted text `#968D82` on dark canvas `#0E0D0C` = 5.94:1.
+   - Error text `#B0372F` on light card `#FBF8F3` = 5.77:1.
 2. **Keyboard Focus States**:
    - Every interactive element (`<a>`, `<button>`, `<input>`, `<textarea>`) possesses a dedicated `:focus-visible` outline: `2px solid #C8A15A` with `2px offset`. Default browser outline is suppressed only when focus-visible is custom styled.
 3. **Screen Readers & ARIA**:
